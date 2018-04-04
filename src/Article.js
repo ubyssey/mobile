@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import './Article.css';
+import featuredimage from './image-3-medium.jpg';
 
 class Article extends Component {
   constructor(props) {
   	super(props);
-	this.state = {
-	  content: this.getContent(),
-	  expanded: false,
-	}
+  	this.state = {
+  	  content: this.getContent(),
+  	  expanded: false,
+  	}
   }
 
   getContent() {
   	return (
   	  <div>
 	      <h1>Article headline here</h1>
+        <div className="c-mobile-article__info">
+          <div className="c-mobile-article__author"><b>Written by Firstname Lastname</b></div>
+          <div className="c-mobile-article__date">April 4, 2018</div>
+          <div className="c-mobile-article__readtime">5 min read</div>
+        </div>
+        <img src={featuredimage} />
 	  	  <p>
 	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 	      	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

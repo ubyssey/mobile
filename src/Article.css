@@ -8,14 +8,64 @@ h1 {
 
 button {
   bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
 
   z-index: 2;
+
+  background-color: #0070c9;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+img {
+  max-width: 70%;
+}
+
+.c-mobile-article__info {
+  display: inline-block;
+  margin-bottom: 10px;
+  height: auto;
+
+  font-size: 13px;
+}
+
+.c-mobile-article__author {
+  float: left;
+  margin-left: 10%;
+  width: 30%;
+
+  text-align: left;
+}
+
+.c-mobile-article__date {
+  float: right;
+  margin-right: 10%;
+
+  text-align: right;
+}
+
+.c-mobile-article__readtime {
+  float: right;
+  margin-right: 10%;
+
+  text-align: right;
 }
 
 .c-mobile-article__content {
+  margin-left: 10px;
+  margin-right: 10px;
   height: calc(100vh - 210px);
   overflow: hidden;
+  
+  font-size: 12px;
 }
 
 .c-mobile-article__content.collapsed{
@@ -27,8 +77,8 @@ button {
 }
 
 #gradient {
-  height: calc(100vh - 210px);
-  top: 55px;
+  height: 25%;
+  bottom: 155px;
   right: 0;
   left: 0;
   position: absolute;
