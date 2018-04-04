@@ -28,7 +28,7 @@ button {
 
 #gradient {
   height: calc(100vh - 210px);
-  top: 0;
+  top: 55px;
   right: 0;
   left: 0;
   position: absolute;
