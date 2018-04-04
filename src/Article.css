@@ -37,24 +37,17 @@ img {
   font-size: 13px;
 }
 
-.c-mobile-article__author {
+.c-mobile-article__info--left {
   float: left;
-  margin-left: 10%;
+  margin-left: 5%;
   width: 30%;
 
   text-align: left;
 }
 
-.c-mobile-article__date {
+.c-mobile-article__info--right {
   float: right;
-  margin-right: 10%;
-
-  text-align: right;
-}
-
-.c-mobile-article__readtime {
-  float: right;
-  margin-right: 10%;
+  margin-right: 5%;
 
   text-align: right;
 }

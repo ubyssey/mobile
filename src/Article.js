@@ -16,9 +16,13 @@ class Article extends Component {
   	  <div>
 	      <h1>Article headline here</h1>
         <div className="c-mobile-article__info">
-          <div className="c-mobile-article__author"><b>Written by Firstname Lastname</b></div>
-          <div className="c-mobile-article__date">April 4, 2018</div>
-          <div className="c-mobile-article__readtime">5 min read</div>
+          <div className="c-mobile-article__info--left">
+            <div className="c-mobile-article__author"><b>Written by Firstname Lastname</b></div>
+          </div>
+          <div className="c-mobile-article__info--right">
+            <div className="c-mobile-article__date">April 4, 2018</div>
+            <div className="c-mobile-article__readtime">5 min read</div>
+          </div>
         </div>
         <img src={featuredimage} />
 	  	  <p>
