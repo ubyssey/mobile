@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FooterNav.css';
-import Carousel from './Carousel';
+import CarouselSlider from './CarouselSlider';
 
 class FooterNav extends Component {
   render() {
@@ -9,7 +9,7 @@ class FooterNav extends Component {
       	<div class="category">
       		CATEGORY NAME HERE
       	</div>
-      	<Carousel />
+      	<CarouselSlider />
       </div>
     );
   }
