@@ -6,7 +6,7 @@ import FooterNav from './FooterNav';
 class Footer extends Component {
   render() {
     return (
-      <div className="Footer">
+      <div className="c-mobile-footer">
       	<FooterAd />
       	<FooterNav onClick={(index) => this.props.onClick(index)} selected={this.props.selected} articles={this.props.articles} />
       </div>

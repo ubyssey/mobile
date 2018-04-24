@@ -4,7 +4,7 @@ import './FooterAd.css';
 class FooterAd extends Component {
   render() {
     return (
-      <div className="FooterAd">
+      <div className="c-mobile-footerad">
       	BANNER AD HERE
       </div>
     );

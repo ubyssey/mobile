@@ -8,11 +8,11 @@ class CustomSlide extends Component {
     var image = require(`${item.featured_image}`);
     console.log(props);
     return (
-      <div className="CarouselItem" onClick={props.onClick} {...props}>
+      <div className="o-mobile-carouselitem" onClick={props.onClick} {...props}>
         <div>
-          <img src={image} class="slide-image" />
+          <img src={image} class="o-mobile-carouselitem__image" />
         </div>
-        <div className="slide-headline">
+        <div className="o-mobile-carouselitem__headline">
           {item.headline}
         </div>
       </div>
