@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <div className="Footer">
       	<FooterAd />
-      	<FooterNav />
+      	<FooterNav onClick={(index) => this.props.onClick(index)} selected={this.props.selected} articles={this.props.articles} />
       </div>
     );
   }

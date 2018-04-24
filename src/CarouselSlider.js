@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import Slider from 'react-slick';
+import './CarouselSlider.css'
 
 class CustomSlide extends Component {
   render() {
     const { item, ...props } = this.props;
+    var image = require(`${item.featured_image}`);
+    console.log(props);
     return (
-      <div {...props}>
-        <h3>{item}</h3>
+      <div className="CarouselItem" onClick={props.onClick} {...props}>
+        <div>
+          <img src={image} class="slide-image" />
+        </div>
+        <div className="slide-headline">
+          {item.headline}
+        </div>
       </div>
     );
   }
 }
 
-export default class SwipeToSlide extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      carouselItems: [1,2,3,4,5,6,7,8,9],
-    };
-  }
-
+export default class CarouselSlider extends Component {
   render() {
     const settings = {
       className: "center",
@@ -38,9 +39,9 @@ export default class SwipeToSlide extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {this.state.carouselItems.map((item) => {
+          {this.props.articles.map((item, index) => {
             console.log('Entered');
-            return (<CustomSlide item={item} />)
+            return (<CustomSlide item={item} onClick={() => this.props.onClick(index)} />)
           })}
         </Slider>
       </div>

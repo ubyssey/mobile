@@ -4,12 +4,13 @@ import CarouselSlider from './CarouselSlider';
 
 class FooterNav extends Component {
   render() {
+    let selected = this.props.selected;
     return (
       <div className="FooterNav">
       	<div class="category">
-      		CATEGORY NAME HERE
+      		{this.props.articles[selected].category.toUpperCase()}
       	</div>
-      	<CarouselSlider />
+      	<CarouselSlider selected={this.props.selected} articles={this.props.articles} onClick={(index) => this.props.onClick(index)} />
       </div>
     );
   }
