@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Article from './Article';
+import Header from './Header';
 import Footer from './Footer';
 
 class App extends Component {
@@ -67,9 +69,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          {this.state.selected}
-        </div>
+        <Header />
+        <Article />
         <Footer selected={this.state.selected} articles={this.state.articles} onClick={(i) => this.handleClick(i)} />
       </div>
     );
