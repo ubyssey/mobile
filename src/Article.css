@@ -33,21 +33,23 @@ img {
   display: inline-block;
   margin-bottom: 10px;
   height: auto;
+  width: 100%;
 
   font-size: 13px;
 }
 
 .c-mobile-article__info--left {
   float: left;
-  margin-left: 5%;
-  width: 30%;
+  margin-left: 7%;
+  width: 35%;
 
   text-align: left;
 }
 
 .c-mobile-article__info--right {
   float: right;
-  margin-right: 5%;
+  margin-right: 7%;
+  width: 40%;
 
   text-align: right;
 }
