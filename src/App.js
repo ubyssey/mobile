@@ -79,14 +79,14 @@ class App extends Component {
     let selected = index;
     this.setState({
       selected: selected,
-      expanded: false,
+      article_expanded: false,
     });
   }
 
   handleButtonClick() {
-    const expanded = this.state.expanded;
+    const expanded = this.state.article_expanded;
     this.setState({
-      expanded: !expanded
+      article_expanded: !expanded
     });
   }
 
@@ -94,7 +94,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Article expanded={this.state.expanded} article={this.state.articles[this.state.selected]} onClick={() => this.handleButtonClick()} />
+        <Article expanded={this.state.article_expanded} article={this.state.articles[this.state.selected]} onClick={() => this.handleButtonClick()} />
         <Footer selected={this.state.selected} articles={this.state.articles} onClick={(i) => this.handleArticleClick(i)} />
       </div>
     );
