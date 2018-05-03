@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       selected: 0,
+      article_expanded: false,
       articles: [
         {
           article_id: 0,
@@ -74,10 +75,18 @@ class App extends Component {
     };
   }
 
-  handleClick(index) {
+  handleArticleClick(index) {
     let selected = index;
     this.setState({
       selected: selected,
+      expanded: false,
+    });
+  }
+
+  handleButtonClick() {
+    const expanded = this.state.expanded;
+    this.setState({
+      expanded: !expanded
     });
   }
 
@@ -85,8 +94,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Article article={this.state.articles[this.state.selected]} />
-        <Footer selected={this.state.selected} articles={this.state.articles} onClick={(i) => this.handleClick(i)} />
+        <Article expanded={this.state.expanded} article={this.state.articles[this.state.selected]} onClick={() => this.handleButtonClick()} />
+        <Footer selected={this.state.selected} articles={this.state.articles} onClick={(i) => this.handleArticleClick(i)} />
       </div>
     );
   }

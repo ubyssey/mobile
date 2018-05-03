@@ -3,20 +3,8 @@ import './Article.css';
 import featuredimage from './image-3-medium.jpg';
 
 class Article extends Component {
-  constructor(props) {
-  	super(props);
-  	this.state = {
-  	  expanded: false,
-  	}
-  }
-
-  handleButtonClick() {
-  	const { expanded } = this.state.expanded;
-  	this.setState({ expanded: !expanded });
-  }
-
   render() {
-  	const toggledClass = this.state.expanded ? 'expanded' : 'collapsed';
+  	const toggledClass = this.props.expanded ? 'expanded' : 'collapsed';
     var image = require(`${this.props.article.featured_image}`);
     return (
       <div className="c-mobile-article">
@@ -42,8 +30,8 @@ class Article extends Component {
             {this.props.article.content}
           </p>
         </div>
-      	{this.state.expanded ? '' : (<div id="gradient"></div>)}
-      	{this.state.expanded ? '' : (<button onClick={() => this.handleButtonClick()}>Read full article</button>)}
+      	{this.props.expanded ? '' : (<div id="gradient"></div>)}
+      	{this.props.expanded ? '' : (<button onClick={() => this.props.onClick()}>Read full article</button>)}
       </div>
     );
   }
