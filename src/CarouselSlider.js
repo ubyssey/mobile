@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from 'react-slick';
 import './CarouselSlider.css'
 
-class CustomSlide extends Component {
+class CarouselItem extends Component {
   render() {
     const { item, ...props } = this.props;
     var image = require(`${item.featured_image}`);
@@ -41,7 +41,7 @@ export default class CarouselSlider extends Component {
         <Slider {...settings}>
           {this.props.articles.map((item, index) => {
             console.log('Entered');
-            return (<CustomSlide item={item} onClick={() => this.props.onClick(index)} />)
+            return (<CarouselItem item={item} onClick={() => this.props.onClick(index)} />)
           })}
         </Slider>
       </div>
