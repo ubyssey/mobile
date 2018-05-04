@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import './Menu.css';
-import MenuItem from './MenuItem';
+import MenuListing from './MenuListing';
+import MenuAds from './MenuAds';
 
 class Menu extends Component {
   render() {
+    const isVisible = this.props.visible ? 'visible' : 'invisible';
     return (
-      <div className="Menu">
-      	<b>Categories</b>
-      	<div>
-	      <MenuItem category='Culture' />
-	      <MenuItem category='Feature' />
-	      <MenuItem category='Opinion' />
-	      <MenuItem category='Science' />
-	      <MenuItem category='Sports' />
-      	</div>
-      	<div>
-      	  Ads
-      	</div>
+      <div className="c-mobile-menu">
+        <div className={`c-mobile-menu ${isVisible}`}>
+          <div class="c-mobile-menu__header"><b>Categories</b></div>
+          <MenuListing />
+          <MenuAds />
+        </div>
       </div>
     );
   }

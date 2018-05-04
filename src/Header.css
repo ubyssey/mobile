@@ -7,15 +7,13 @@
   line-height: 54px;
 }
 
-a {
+.c-mobile-header-left {
   height: 54px;
   position: absolute;
   vertical-align: middle;
 
   background: rgba(255, 255, 255, 0.99);
-}
 
-.c-mobile-header-left {
   top: 0;
   bottom: 0;
   left: 0;
@@ -32,6 +30,12 @@ a {
 }
 
 .c-mobile-header-logo {
+  height: 54px;
+  position: absolute;
+  vertical-align: middle;
+
+  background: rgba(255, 255, 255, 0.99);
+
   display: block;
   margin-left: auto;
   margin-right: auto;

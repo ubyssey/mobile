@@ -4,8 +4,8 @@ import './MenuItem.css';
 class MenuItem extends Component {
   render() {
     return (
-      <div className="MenuItem">
-      	{this.props.category}
+      <div className="c-mobile-menuitem">
+      	<b>{this.props.category}</b>
       </div>
     );
   }
