@@ -7,23 +7,21 @@ class App extends Component {
   constructor(props) {
   	super(props);
   	this.state = {
-  	  menu_visible: false,
+  	  menuVisible: false,
   	};
   }
 
   handleHamburgerClick() {
-  	const visible = this.state.menu_visible;
   	this.setState({
-  		menu_visible: !visible,
+  		menuVisible: !this.state.menuVisible,
   	});
-  	console.log(this.state.menu_visible);
   }
 
   render() {
     return (
       <div className="App">
         <Header onClick={() => this.handleHamburgerClick()} />
-      	<Menu visible={this.state.menu_visible} />
+      	<Menu visible={this.state.menuVisible} />
       </div>
     );
   }

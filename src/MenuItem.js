@@ -5,7 +5,7 @@ class MenuItem extends Component {
   render() {
     return (
       <div className="c-mobile-menuitem">
-      	<b>{this.props.category}</b>
+      	<strong>{this.props.category}</strong>
       </div>
     );
   }
