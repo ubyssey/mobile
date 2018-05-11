@@ -3,26 +3,32 @@ import './Article.css';
 import featuredimage from './image-3-medium.jpg';
 
 class Article extends Component {
+  getDatePublished() {
+    return (
+      new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }).format(this.props.article.datePublished)
+    );
+  }
+
   render() {
-  	const toggledClass = this.props.expanded ? 'expanded' : 'collapsed';
-    var image = require(`${this.props.article.featured_image}`);
+    const toggledClass = this.props.expanded ? 'expanded' : 'collapsed';
+    const image = require(`${this.props.article.featuredImage}`);
     return (
       <div className="c-mobile-article">
       	<div className={`c-mobile-article__content ${toggledClass}`}>
-          <h1>{this.props.article.headline}</h1>
+          <h1 className="c-mobile-article__headline">{this.props.article.headline}</h1>
           <div className="c-mobile-article__info">
             <div className="c-mobile-article__info--left">
-              <div className="c-mobile-article__author"><b>Written by {this.props.article.author}</b></div>
+              <div className="c-mobile-article__author"><strong>Written by {this.props.article.author}</strong></div>
             </div>
             <div className="c-mobile-article__info--right">
               <div className="c-mobile-article__date">
-                {new Intl.DateTimeFormat('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                }).format(this.props.article.date_published)}
+                {this.getDatePublished()}
               </div>
-              <div className="c-mobile-article__readtime">{this.props.article.reading_time} min read</div>
+              <div className="c-mobile-article__readtime">{this.props.article.readingTime} min read</div>
             </div>
           </div>
           <img src={image} />

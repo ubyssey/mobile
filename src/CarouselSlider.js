@@ -5,7 +5,7 @@ import './CarouselSlider.css'
 class CarouselItem extends Component {
   render() {
     const { item, ...props } = this.props;
-    var image = require(`${item.featured_image}`);
+    var image = require(`${item.featuredImage}`);
     console.log(props);
     return (
       <div className="o-mobile-carouselitem" onClick={props.onClick} {...props}>
