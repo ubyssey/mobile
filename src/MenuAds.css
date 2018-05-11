@@ -1,2 +1,9 @@
 .c-mobile-menuads {
+  /*height: screen height - header bar - menu header - menu items - margins - ad box borders*/
+  height: calc(100vh - 54px - 38.4px - 227.2px - 45px - 4px);
+}
+
+.c-mobile-menuads__ad {
+  height: 50%;
+  border: 1px solid #DADADA;
 }
