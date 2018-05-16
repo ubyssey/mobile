@@ -9,7 +9,7 @@ class Menu extends Component {
     return (
       <div className="c-mobile-menu">
         <div className={`c-mobile-menu ${isVisible}`}>
-          <div class="c-mobile-menu__header"><b>Categories</b></div>
+          <div class="c-mobile-menu__header"><strong>Categories</strong></div>
           <MenuListing />
           <MenuAds />
         </div>
