@@ -117,6 +117,7 @@ class App extends Component {
     this.setState({
       shelfVisible: false,
       selected: id,
+      articleExpanded: false,
     });
   }
 
