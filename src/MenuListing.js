@@ -7,15 +7,21 @@ class MenuListing extends Component {
   generateMenuItems() {
     return (
       <div>
-        <MenuItem category='News' onClick={() => this.props.onClick()} />
-        <MenuItem category='Culture' onClick={() => this.props.onClick()} />
-        <MenuItem category='Features' onClick={() => this.props.onClick()} />
-        <MenuItem category='Opinion' onClick={() => this.props.onClick()} />
-        <MenuItem category='Sports' onClick={() => this.props.onClick()} />
-        <MenuItem category='Blog' onClick={() => this.props.onClick()} />
-        <MenuItem category='Science' onClick={() => this.props.onClick()} />
-        <MenuItem category='Events' onClick={() => this.props.onClick()} />
+        {this.renderMenuItem('News')}
+        {this.renderMenuItem('Culture')}
+        {this.renderMenuItem('Features')}
+        {this.renderMenuItem('Opinion')}
+        {this.renderMenuItem('Sports')}
+        {this.renderMenuItem('Blog')}
+        {this.renderMenuItem('Science')}
+        {this.renderMenuItem('Events')}
       </div>
+    );
+  }
+
+  renderMenuItem(category) {
+    return (
+      <MenuItem category={category} onClick={() => this.props.onClick(category)} />
     );
   }
 

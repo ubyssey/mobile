@@ -10,7 +10,7 @@ class Menu extends Component {
       <div className="c-mobile-menu">
         <div className={`c-mobile-menu ${isVisible}`}>
           <div class="c-mobile-menu__header"><b>Categories</b></div>
-          <MenuListing onClick={() => this.props.onClick()} />
+          <MenuListing onClick={(category) => this.props.onClick(category)} />
           <MenuAds />
         </div>
       </div>

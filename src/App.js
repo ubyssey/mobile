@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
   	super(props);
   	this.state = {
-      shelfCategory: 'CATEGORY',
+      shelfCategory: 'no category',
   	  menuVisible: false,
       shelfVisible: false,
   	};
@@ -20,10 +20,11 @@ class App extends Component {
   	});
   }
 
-  handleMenuItemClick() {
+  handleMenuItemClick(category) {
     this.setState({
       menuVisible: false,
       shelfVisible: true,
+      shelfCategory: category,
     });
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header onClick={() => this.handleHamburgerClick()} />
-      	<Menu onClick={() => this.handleMenuItemClick()} visible={this.state.menuVisible} />
+      	<Menu onClick={(category) => this.handleMenuItemClick(category)} visible={this.state.menuVisible} />
         <Shelf visible={this.state.shelfVisible} category={this.state.shelfCategory} />
       </div>
     );

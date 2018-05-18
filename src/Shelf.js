@@ -8,7 +8,7 @@ class Shelf extends Component {
       <div className="c-mobile-shelf">
         <div className={`c-mobile-shelf ${isVisible}`}>
           <div className="c-mobile-shelf__header">
-            {this.props.category}
+            {this.props.category.toUpperCase()}
           </div>
           <div className="articles">
           </div>
