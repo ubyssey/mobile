@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import './Shelf.css';
 
-class Shelf extends Component {
-  renderShelfItems() {
+class ShelfItem extends Component {
+  render() {
+    const { item, ...props } = this.props;
+    var image = require(`${item.featuredImage}`);
+    console.log(props);
+    return (
+      <div className="o-mobile-shelfitem" onClick={props.onClick}>
+        <div className="o-mobile-shelfitem__headline">
+          {item.headline}
+        </div>
+        <div>
+          <img src={image} class="o-mobile-shelfitem__image" />
+        </div>
+      </div>
+    );
   }
+}
 
+class Shelf extends Component {
   render() {
     const isVisible = this.props.visible ? 'visible' : 'invisible';
     return (
@@ -14,22 +29,11 @@ class Shelf extends Component {
             {this.props.category.toUpperCase()}
           </div>
           <div className="c-mobile-shelf__content">
-            <div onClick={() => this.props.onClick()}>
-              1
-            </div>
-            <div>
-              2
-            </div>
-            <div>
-              3
-            </div>
-            <div>
-              4
-            </div>
-            <div>
-              5
-            </div>
-            {this.renderShelfItems()}
+            {this.props.articles.map((item) => {
+              console.log('Entered');
+              console.log(item);
+              return (<ShelfItem item={item} onClick={() => this.props.onClick(item.articleId)} />)
+            })}
           </div>
         </div>
       </div>

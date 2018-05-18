@@ -39,9 +39,9 @@ export default class CarouselSlider extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {this.props.articles.map((item, index) => {
+          {this.props.articles.map((item) => {
             console.log('Entered');
-            return (<CarouselItem item={item} onClick={() => this.props.onClick(index)} />)
+            return (<CarouselItem item={item} onClick={() => this.props.onClick(item.articleId)} />)
           })}
         </Slider>
       </div>

@@ -81,9 +81,9 @@ class App extends Component {
     };
   }
 
-  handleArticleClick(index) {
+  handleArticleClick(id) {
     this.setState({
-      selected: index,
+      selected: id,
       articleExpanded: false,
     });
   }
@@ -113,9 +113,10 @@ class App extends Component {
     });
   }
 
-  handleShelfItemClick() {
+  handleShelfItemClick(id) {
     this.setState({
       shelfVisible: false,
+      selected: id,
     });
   }
 
@@ -143,7 +144,7 @@ class App extends Component {
           visible={this.state.shelfVisible}
           category={this.state.shelfCategory}
           articles={this.state.shelfArticles}
-          onClick={() => this.handleShelfItemClick()} />
+          onClick={(id) => this.handleShelfItemClick(id)} />
         <Article
           expanded={this.state.articleExpanded}
           article={this.getCurrentArticle()}
