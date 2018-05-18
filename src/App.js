@@ -10,6 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      shelfArticles: [],
       shelfCategory: 'no category',
       menuVisible: false,
       shelfVisible: false,
@@ -23,7 +24,7 @@ class App extends Component {
           datePublished: new Date('04/04/2018'),
           readingTime: '5',
           featuredImage: './image-3-medium.jpg',
-          category: 'Insert Category Here',
+          category: 'News',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
@@ -33,7 +34,7 @@ class App extends Component {
           datePublished: new Date('10/31/2017'),
           readingTime: '4',
           featuredImage: './Image1.jpg',
-          category: 'Category #1',
+          category: 'Features',
           content: 'contents of article #1',
         },
         {
@@ -43,7 +44,7 @@ class App extends Component {
           datePublished: new Date('11/30/2017'),
           readingTime: '3',
           featuredImage: './Image2.jpg',
-          category: 'Category #2',
+          category: 'Culture',
           content: 'contents of article #2',
         },
         {
@@ -53,7 +54,7 @@ class App extends Component {
           datePublished: new Date('12/31/2017'),
           readingTime: '2',
           featuredImage: './Image3.jpg',
-          category: 'Category #3',
+          category: 'News',
           content: 'contents of article #3',
         },
         {
@@ -63,7 +64,7 @@ class App extends Component {
           datePublished: new Date('01/31/2018'),
           readingTime: '1',
           featuredImage: './Image4.jpg',
-          category: 'Category #4',
+          category: 'Culture',
           content: 'contents of article #4',
         },
         {
@@ -73,7 +74,7 @@ class App extends Component {
           datePublished: new Date('02/28/2018'),
           readingTime: '0',
           featuredImage: './Image5.jpg',
-          category: 'Category #5',
+          category: 'News',
           content: 'contents of article #5',
         },
       ],
@@ -108,6 +109,7 @@ class App extends Component {
       menuVisible: false,
       shelfVisible: true,
       shelfCategory: category,
+      shelfArticles: this.getShelfArticles(category),
     });
   }
 
@@ -115,6 +117,18 @@ class App extends Component {
     this.setState({
       shelfVisible: false,
     });
+  }
+
+  getShelfArticles(category) {
+    let shelfArticles = [];
+
+    this.state.articles.forEach( function (article) {
+      if (String(article.category).valueOf() === String(category).valueOf()) {
+        shelfArticles.push(article);
+      }
+    });
+
+    return shelfArticles;
   }
 
   render() {
@@ -128,6 +142,7 @@ class App extends Component {
         <Shelf
           visible={this.state.shelfVisible}
           category={this.state.shelfCategory}
+          articles={this.state.shelfArticles}
           onClick={() => this.handleShelfItemClick()} />
         <Article
           expanded={this.state.articleExpanded}

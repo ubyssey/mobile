@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Shelf.css';
 
 class Shelf extends Component {
+  renderShelfItems() {
+  }
+
   render() {
     const isVisible = this.props.visible ? 'visible' : 'invisible';
     return (
@@ -26,6 +29,7 @@ class Shelf extends Component {
             <div>
               5
             </div>
+            {this.renderShelfItems()}
           </div>
         </div>
       </div>
