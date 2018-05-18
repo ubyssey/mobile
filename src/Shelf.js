@@ -10,7 +10,22 @@ class Shelf extends Component {
           <div className="c-mobile-shelf__header">
             {this.props.category.toUpperCase()}
           </div>
-          <div className="articles">
+          <div className="c-mobile-shelf__content">
+            <div onClick={() => this.props.onClick()}>
+              1
+            </div>
+            <div>
+              2
+            </div>
+            <div>
+              3
+            </div>
+            <div>
+              4
+            </div>
+            <div>
+              5
+            </div>
           </div>
         </div>
       </div>

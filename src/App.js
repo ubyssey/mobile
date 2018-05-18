@@ -28,12 +28,18 @@ class App extends Component {
     });
   }
 
+  handleShelfItemClick() {
+    this.setState({
+      shelfVisible: false,
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header onClick={() => this.handleHamburgerClick()} />
       	<Menu onClick={(category) => this.handleMenuItemClick(category)} visible={this.state.menuVisible} />
-        <Shelf visible={this.state.shelfVisible} category={this.state.shelfCategory} />
+        <Shelf onClick={() => this.handleShelfItemClick()} visible={this.state.shelfVisible} category={this.state.shelfCategory} />
       </div>
     );
   }

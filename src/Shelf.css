@@ -19,3 +19,8 @@
   color: white;
   text-align: center;
 }
+
+.c-mobile-shelf__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
