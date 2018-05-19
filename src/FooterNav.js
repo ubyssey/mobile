@@ -8,12 +8,12 @@ class FooterNav extends Component {
     return (
       <div className="c-mobile-footernav">
       	<div class="c-mobile-footernav__category">
-      		{this.props.articles[selected].category.toUpperCase()}
+      		{this.props.category.toUpperCase()}
       	</div>
       	<CarouselSlider
           selected={this.props.selected}
           articles={this.props.articles}
-          onClick={(index) => this.props.onClick(index)} />
+          onClick={(id) => this.props.onClick(id)} />
       </div>
     );
   }

@@ -10,8 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shelfArticles: [],
-      shelfCategory: 'no category',
+      currentCategoryArticles: [],
+      currentCategory: 'No category',
       menuVisible: false,
       shelfVisible: false,
       selected: 0,
@@ -108,8 +108,8 @@ class App extends Component {
     this.setState({
       menuVisible: false,
       shelfVisible: true,
-      shelfCategory: category,
-      shelfArticles: this.getShelfArticles(category),
+      currentCategory: category,
+      currentCategoryArticles: this.getCurrentCategoryArticles(category),
     });
   }
 
@@ -121,16 +121,37 @@ class App extends Component {
     });
   }
 
-  getShelfArticles(category) {
-    let shelfArticles = [];
+  getCurrentCategoryArticles(category) {
+    let currentCategoryArticles = [];
 
     this.state.articles.forEach( function (article) {
       if (String(article.category).valueOf() === String(category).valueOf()) {
-        shelfArticles.push(article);
+        currentCategoryArticles.push(article);
       }
     });
 
-    return shelfArticles;
+    return currentCategoryArticles;
+  }
+
+  selectFirstArticle() {
+    // TODO: make this return the article that reader was linked to from Facebook, etc
+    return 0;
+  }
+
+  getCategory() {
+    return this.state.articles[this.state.selected].category;
+  }
+
+  componentWillMount() {
+    this.setState({
+      selected: this.selectFirstArticle(),
+    });
+  }
+
+  componentDidMount() {
+    this.setState({
+      currentCategory: this.getCategory(),
+    });
   }
 
   render() {
@@ -143,8 +164,8 @@ class App extends Component {
           onClick={(category) => this.handleMenuItemClick(category)} />
         <Shelf
           visible={this.state.shelfVisible}
-          category={this.state.shelfCategory}
-          articles={this.state.shelfArticles}
+          category={this.state.currentCategory}
+          articles={this.state.currentCategoryArticles}
           onClick={(id) => this.handleShelfItemClick(id)} />
         <Article
           expanded={this.state.articleExpanded}
@@ -152,7 +173,8 @@ class App extends Component {
           onClick={() => this.handleButtonClick()} />
         <Footer
           selected={this.state.selected}
-          articles={this.state.articles}
+          category={this.state.currentCategory}
+          articles={this.state.currentCategoryArticles}
           onClick={(i) => this.handleArticleClick(i)} />
       </div>
     );

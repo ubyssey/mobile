@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Article.css';
-import featuredimage from './image-3-medium.jpg';
 
 class Article extends Component {
   getDatePublished() {

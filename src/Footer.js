@@ -10,6 +10,7 @@ class Footer extends Component {
       	<FooterAd />
       	<FooterNav
       	  onClick={(id) => this.props.onClick(id)}
+          category={this.props.category}
       	  selected={this.props.selected}
       	  articles={this.props.articles} />
       </div>
