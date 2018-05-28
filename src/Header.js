@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div className="c-mobile-header">
       	<a class="c-mobile-header-left" href="#"><i class="fa fa-bars"></i></a>
-      	<a class="c-mobile-header-logo" href="/"><img src={logo} type="text/css" /></a>
+      	<a class="c-mobile-header-logo" href="/"><img src={logo} class="c-mobile-header-logo-image" type="text/css" /></a>
       </div>
     );
   }
