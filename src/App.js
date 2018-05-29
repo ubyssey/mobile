@@ -12,10 +12,10 @@ class App extends Component {
     this.state = {
       currentCategoryArticles: [],
       currentCategory: 'No category',
-      menuVisible: false,
-      shelfVisible: false,
+      isMenuVisible: false,
+      isShelfVisible: false,
       selected: 0,
-      articleExpanded: false,
+      isArticleExpanded: false,
       articles: [
         {
           articleId: 0,
@@ -84,13 +84,13 @@ class App extends Component {
   handleArticleClick(id) {
     this.setState({
       selected: id,
-      articleExpanded: false,
+      isArticleExpanded: false,
     });
   }
 
   handleButtonClick() {
     this.setState({
-      articleExpanded: !this.state.articleExpanded,
+      isArticleExpanded: !this.state.isArticleExpanded,
     });
   }
 
@@ -100,14 +100,14 @@ class App extends Component {
 
   handleHamburgerClick() {
     this.setState({
-      menuVisible: !this.state.menuVisible,
+      isMenuVisible: !this.state.isMenuVisible,
     });
   }
 
   handleMenuItemClick(category) {
     this.setState({
-      menuVisible: false,
-      shelfVisible: true,
+      isMenuVisible: false,
+      isShelfVisible: true,
       currentCategory: category,
       currentCategoryArticles: this.getCurrentCategoryArticles(category),
     });
@@ -115,9 +115,9 @@ class App extends Component {
 
   handleShelfItemClick(id) {
     this.setState({
-      shelfVisible: false,
+      isShelfVisible: false,
       selected: id,
-      articleExpanded: false,
+      isArticleExpanded: false,
     });
   }
 
@@ -160,15 +160,15 @@ class App extends Component {
         <Header
           onClick={() => this.handleHamburgerClick()} />
         <Menu
-          visible={this.state.menuVisible}
+          isVisible={this.state.isMenuVisible}
           onClick={(category) => this.handleMenuItemClick(category)} />
         <Shelf
-          visible={this.state.shelfVisible}
+          isVisible={this.state.isShelfVisible}
           category={this.state.currentCategory}
           articles={this.state.currentCategoryArticles}
           onClick={(id) => this.handleShelfItemClick(id)} />
         <Article
-          expanded={this.state.articleExpanded}
+          isExpanded={this.state.isArticleExpanded}
           article={this.getCurrentArticle()}
           onClick={() => this.handleButtonClick()} />
         <Footer

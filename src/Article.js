@@ -13,7 +13,7 @@ class Article extends Component {
   }
 
   render() {
-    const toggledClass = this.props.expanded ? 'expanded' : 'collapsed';
+    const toggledClass = this.props.isExpanded ? 'expanded' : 'collapsed';
     const image = require(`${this.props.article.featuredImage}`);
     return (
       <div className="c-mobile-article">
@@ -35,8 +35,8 @@ class Article extends Component {
             {this.props.article.content}
           </p>
         </div>
-      	{this.props.expanded ? '' : (<div id="gradient"></div>)}
-      	{this.props.expanded ? '' : (<button onClick={() => this.props.onClick()}>Read full article</button>)}
+      	{this.props.isExpanded ? '' : (<div id="gradient"></div>)}
+      	{this.props.isExpanded ? '' : (<button onClick={() => this.props.onClick()}>Read full article</button>)}
       </div>
     );
   }

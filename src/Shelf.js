@@ -21,7 +21,7 @@ class ShelfItem extends Component {
 
 class Shelf extends Component {
   render() {
-    const isVisible = this.props.visible ? 'visible' : 'invisible';
+    const isVisible = this.props.isVisible ? 'visible' : 'invisible';
     return (
       <div className="c-mobile-shelf">
         <div className={`c-mobile-shelf ${isVisible}`}>
