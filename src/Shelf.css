@@ -1,5 +1,4 @@
 .c-mobile-shelf.visible {
-  height: calc(100vh - 55px);
   min-height: calc(100vh - 55px);
   position: absolute;
   z-index: 600;
