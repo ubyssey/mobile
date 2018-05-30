@@ -15,7 +15,7 @@ class CarouselItem extends Component {
             <img src={image} class="o-mobile-carouselitem__image" />
           </div>
           <div className="o-mobile-carouselitem__headline">
-            {item.headline}
+            <span>{item.headline}</span>
           </div>
         </div>
       </div>

@@ -55,7 +55,6 @@
   max-height: 3.6em;
   padding-right: 1em;
   padding-left: 1em;
-  text-align: center;
 }
 
 .o-mobile-shelfitem__headline span {
@@ -76,6 +75,5 @@
   right: 0;
   width: 1em;
   height: 1em;
-  margin-top: 0.2em;
   background: white;
 }
