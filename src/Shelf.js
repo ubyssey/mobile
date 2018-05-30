@@ -9,7 +9,7 @@ class ShelfItem extends Component {
     return (
       <div className="o-mobile-shelfitem" onClick={props.onClick}>
         <div className="o-mobile-shelfitem__headline">
-          {item.headline}
+          <span>{item.headline}</span>
         </div>
         <div>
           <img src={image} class="o-mobile-shelfitem__image" />

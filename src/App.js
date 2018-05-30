@@ -29,7 +29,7 @@ class App extends Component {
         },
         {
           articleId: 1,
-          headline: 'This is News Article #1',
+          headline: 'This is News Article #1 with a very very very very very very very very very very very very very very very long headline',
           author: 'News Author #1',
           datePublished: new Date('06/01/2018'),
           readingTime: 1,

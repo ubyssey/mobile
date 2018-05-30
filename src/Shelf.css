@@ -49,4 +49,33 @@
 .o-mobile-shelfitem__headline {
   text-align: center;
   font-size: 12px;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 3.6em;
+  padding-right: 1em;
+  padding-left: 1em;
+  text-align: center;
+}
+
+.o-mobile-shelfitem__headline span {
+  display: inline-block;
+  text-align: justify;
+}
+
+.o-mobile-shelfitem__headline span:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.o-mobile-shelfitem__headline span:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
 }
