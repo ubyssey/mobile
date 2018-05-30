@@ -245,12 +245,13 @@ class App extends Component {
   componentWillMount() {
     this.setState({
       selected: this.selectFirstArticle(),
+      currentCategory: this.getCategory(),
     });
   }
 
   componentDidMount() {
     this.setState({
-      currentCategory: this.getCategory(),
+      currentCategoryArticles: this.getCurrentCategoryArticles(this.state.currentCategory),
     });
   }
 
