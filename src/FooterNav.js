@@ -4,7 +4,6 @@ import CarouselSlider from './CarouselSlider';
 
 class FooterNav extends Component {
   render() {
-    let selected = this.props.selected;
     return (
       <div className="c-mobile-footernav">
       	<div class="c-mobile-footernav__category">
