@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './Article.css';
 
 class Article extends Component {
+  constructor(props) {
+    super(props);
+    this.articleContent = React.createRef();
+  }
+
+  componentDidUpdate() {
+    console.log(this._div);
+    this.articleContent.current.scrollTop = 0;
+  }
+
   getDatePublished() {
     return (
       new Intl.DateTimeFormat('en-US', {
@@ -17,7 +27,7 @@ class Article extends Component {
     const image = require(`${this.props.article.featuredImage}`);
     return (
       <div className="c-mobile-article">
-      	<div className={`c-mobile-article__content ${toggledClass}`}>
+      	<div ref={this.articleContent} className={`c-mobile-article__content ${toggledClass}`}>
           <h1 className="c-mobile-article__headline">{this.props.article.headline}</h1>
           <div className="c-mobile-article__info">
             <div className="c-mobile-article__info--left">
