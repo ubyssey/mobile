@@ -5,12 +5,11 @@ import './CarouselSlider.css'
 class CarouselItem extends Component {
   render() {
     const { item, ...props } = this.props;
-    var image = require(`${item.featuredImage}`);
     console.log(props);
     return (
       <div className="o-mobile-carouselitem" onClick={props.onClick} {...props}>
         <div>
-          <img src={image} class="o-mobile-carouselitem__image" />
+          <img src={item.featuredImage} class="o-mobile-carouselitem__image" />
         </div>
         <div className="o-mobile-carouselitem__headline">
           {item.headline}
