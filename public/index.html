@@ -25,7 +25,52 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+<!--     <div>
+      <img src="{{ article.featured_image.image.get_medium_url }}" />
+    </div> -->
+<!--     <div>
+      {{ article.content }}
+    </div> -->
+<!--     <div>
+      {{ article.featured_image.image.get_medium_url }}
+    </div> -->
+    <!-- <div>{{ article.headline }}</div> -->
+<!--     <div
+      id="root"
+      title="{{ title }}"
+      meta="{{ meta }}"
+      article="{{ article }}"
+      reading_list="{{ reading_list }}"
+      suggested="{{ suggested }}"
+      base_template="{{ base_template }}"
+      reading_time="{{ reading_time }}">
+    </div> -->
+        <div
+          id="root"
+
+          title="{{ title }}"
+          meta="{{ meta }}"
+          article="{{ article }}"
+          reading_list="{{ reading_list }}"
+          suggested="{{ suggested }}"
+          base_template="{{ base_template }}"
+          reading_time="{{ reading_time }}"
+
+          data-id="{{ article.parent_id }}"
+          data-list="{{ reading_list.ids }}"
+          data-list-name="{{ reading_list.name }}"
+          data-headline="{{ article.headline }}"
+          data-author="{{ authors_json }}"
+          data-section="{{ article.section.slug }}"
+          data-url="{{ article.get_absolute_url }}"
+
+          article-id="{{ article.id }}"
+          article-headline="{{ article.headline|safe }}"
+          article-author="{{ article.get_author_type_string|safe }}"
+          article-publishedat="{{ article.published_at|date:'N j, Y' }}"
+          article-image="{{ article.featured_image.image.get_medium_url }}"
+          article-content="{{ article.content }}">
+        </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
