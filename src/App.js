@@ -106,12 +106,10 @@ class App extends Component {
   }
 
   getCurrentArticle() {
-    // console.log(this.state.context);
     return this.state.articles[this.state.selected];
   }
 
   render() {
-    console.log(this.props.articleImage)
     return (
       <div className="App">
         <Header />
