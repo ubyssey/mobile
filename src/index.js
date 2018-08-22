@@ -21,6 +21,7 @@ ReactDOM.render(
 		articleAuthor={document.getElementById('root').getAttribute('article-author')}
 		articlePublishedAt={document.getElementById('root').getAttribute('article-publishedat')}
 		readingTime={document.getElementById('root').getAttribute('reading_time')}
+		suggestedArticles={document.getElementById('root').getAttribute('suggested')}
 		articleContent={document.getElementById('root').getAttribute('article-content')}
 		articleImage={document.getElementById('root').getAttribute('article-image')}
 	/>, document.getElementById('root'));

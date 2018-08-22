@@ -15,6 +15,7 @@ class App extends Component {
       // dataAuthor: this.props.dataAuthor,
       // dataSection: this.props.dataSection,
       // dataUrl: this.props.dataUrl,
+      // suggestedArticles: this.props.suggestedArticles,
       selected: 0,
       articleExpanded: false,
       articles: [
@@ -110,6 +111,7 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.props.suggestedArticles)
     return (
       <div className="App">
         <Header />
