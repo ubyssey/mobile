@@ -9,7 +9,8 @@ class Footer extends Component {
       <div className="c-mobile-footer">
       	<FooterAd />
       	<FooterNav
-      	  onClick={(index) => this.props.onClick(index)}
+      	  onClick={(id) => this.props.onClick(id)}
+          category={this.props.category}
       	  selected={this.props.selected}
       	  articles={this.props.articles} />
       </div>

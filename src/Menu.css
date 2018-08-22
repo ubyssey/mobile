@@ -1,0 +1,22 @@
+.c-mobile-menu.visible {
+  background-color: white;
+  opacity: 0.90;
+  margin-top: 54px;
+  width: 33%;
+  color: #0070c9;
+  position: absolute;
+  height: calc(100vh - 54px);
+  min-height: calc(100vh - 54px);
+  top: 0;
+  z-index: 700;
+  border-right: 1px solid #DADADA;
+}
+
+.c-mobile-menu.invisible {
+  display: none;
+}
+
+.c-mobile-menu__header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

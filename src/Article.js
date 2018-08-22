@@ -2,11 +2,21 @@ import React, { Component } from 'react';
 import './Article.css';
 
 class Article extends Component {
+  constructor(props) {
+    super(props);
+    this.articleContent = React.createRef();
+  }
+
+  componentDidUpdate() {
+    console.log(this._div);
+    this.articleContent.current.scrollTop = 0;
+  }
+
   render() {
-    const toggledClass = this.props.expanded ? 'expanded' : 'collapsed';
+    const toggledClass = this.props.isExpanded ? 'expanded' : 'collapsed';
     return (
       <div className="c-mobile-article">
-        <div className={`c-mobile-article__content ${toggledClass}`}>
+      	<div ref={this.articleContent} className={`c-mobile-article__content ${toggledClass}`}>
           <h1 className="c-mobile-article__headline">{this.props.article.headline}</h1>
           <div className="c-mobile-article__info">
             <div className="c-mobile-article__info--left">
@@ -24,8 +34,8 @@ class Article extends Component {
             {this.props.article.content}
           </p>
         </div>
-        {this.props.expanded ? '' : (<div id="gradient"></div>)}
-        {this.props.expanded ? '' : (<button onClick={() => this.props.onClick()}>Read full article</button>)}
+      	{this.props.isExpanded ? '' : (<div id="gradient"></div>)}
+      	{this.props.isExpanded ? '' : (<button onClick={() => this.props.onClick()}>Read full article</button>)}
       </div>
     );
   }

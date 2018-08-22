@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className="c-mobile-header">
-      	<a class="c-mobile-header-left" href="#"><i class="fa fa-bars"></i></a>
+      	<a class="c-mobile-header-left" onClick={() => this.props.onClick()}><i class="fa fa-bars"></i></a>
       	<a class="c-mobile-header-logo" href="/"><img src={logo} class="c-mobile-header-logo-image" type="text/css" /></a>
       </div>
     );
